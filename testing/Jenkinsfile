@@ -1,0 +1,24 @@
+pipeline{
+    agent any
+    environment {
+    NODE_ENV_PATH = './testing'
+  }
+    parameters{
+        string(name: "Repositories", defaultValue: "", trim: true, description: "Please enter your Repositories")
+    }
+    stages{
+        stage('Build'){
+            steps{
+                echo 'Hi, i am going to do testing!'
+            }
+        }
+        stage('Testing'){
+            steps{
+                git "$params.Repositories"
+                script{
+                    bat "${NODE_ENV_PATH} && npm test"
+                    }
+            }
+        }
+    }
+}

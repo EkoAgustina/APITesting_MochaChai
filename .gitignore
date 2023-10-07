@@ -1,0 +1,4 @@
+API/.idea/
+testing/node_modules/
+testing/mochawesome-report/
+package-lock.json
