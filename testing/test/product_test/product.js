@@ -20,16 +20,16 @@ describe('PRODUCT', () =>{
             .send(productData)
             .expect(function (res) {
                 if (res.statusCode == 200){
-                    console.log('Adding products, responseCode:'+res.body.responseCode)
+                    console.log('Adding products, responseCode:'+ res.body.responseCode)
                 }
                 else{
-                    reject(new Error('Adding products response code not expected, responseCode:'+res.body.responseCode))
+                    reject(new Error('Adding products response code not expected, responseCode:'+ res.body.responseCode))
                 }
 
             })
             .end((err,ress)=>{
                 if(err){
-                    reject(new Error('There an error: '+res.error))
+                    reject(new Error('There an error: '+ res.error))
                 }
                 else{
                     resolve(ress)
@@ -45,16 +45,16 @@ describe('PRODUCT', () =>{
             .set(header)
             .expect(function (res) {
                 if (res.statusCode == 200){
-                    console.log('Get product, responseCode:'+res.body.responseCode)
+                    console.log('Get product, responseCode:'+ res.body.responseCode)
                 }
                 else{
-                    reject(new Error('get product response code not expected, responseCode:'+res.body.responseCode))
+                    reject(new Error('get product response code not expected, responseCode:'+ res.body.responseCode))
                 }
 
             })
             .end((err,ress)=>{
                 if(err){
-                    reject(new Error('There an error: '+res.error))
+                    reject(new Error('There an error: '+ res.error))
                 }
                 else{
                     resolve(ress)
